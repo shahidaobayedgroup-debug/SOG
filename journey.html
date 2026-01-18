@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap core CSS -->
+	<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style>
+        .journey-timeline {
+			position: absolute;
+			width: 60%;
+			top: 0;
+			left: 20%;
+			right: auto;
+			text-align: center;
+			background-color: transparent;
+			opacity: 0.6;
+			padding: 20px;
+			z-index: 2;
+			color: #fff;
+			border-bottom: 3px solid #fff;
+		}
+        
+
+        .journey-timeline a {
+			display: inline-block;
+            
+			text-decoration: none;
+            color: #333;
+            padding: 10px;
+            transition: color 0.3s;
+			
+        }
+		
+
+        .journey-timeline a:hover {
+            color: #fff;
+        }
+
+        #journeyCarousel.carousel-indicators {
+            display: none;
+        }
+
+        #journeyCarousel.carousel-inner {
+            height: 65vh;
+        }
+		
+		.journey-timeline a.active {
+			
+			color: #fff;
+			font-weight: bold;
+			text-shadow: 1px 2px #212529;
+		}
+		.journey-timeline .active::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #007bff;
+            position: absolute;
+            bottom: -7px;
+            margin-left: 13px;
+        }
+		
+		#journeyCarousel > .carousel-inner > .carousel-item img {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 65vh;
+		}
+    </style>
+</head>
+<body>
+
+<!-- Journey Timeline -->
+<div class="journey-timeline">
+    <h2>Our Journey Through the Years</h2>
+    <!-- Clickable timeline of years -->
+    <div>
+        <a href="#" data-slide-to="0" class="year-point active">2010</a>
+        <a href="#" data-slide-to="1" class="year-point">2012</a>
+		<a href="#" data-slide-to="2" class="year-point">2015</a>
+        <a href="#" data-slide-to="3" class="year-point">2018</a>
+        <a href="#" data-slide-to="4" class="year-point">2026</a>
+    </div>
+</div>
+
+<!-- Bootstrap Carousel -->
+<div id="journeyCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="office-lobby-hdl.jpg" class="d-block w-100 img-fluid" alt="2010 Slide">
+            <div class="carousel-caption">
+                <h3>2010</h3>
+                <p>Milestone or journey story for 2010.</p>
+            </div>
+        </div>
+		
+		<div class="carousel-item">
+            <img src="https://via.placeholder.com/800x300.png?text=2012" class="d-block w-100 img-fluid" alt="2012 Slide">
+            <div class="carousel-caption">
+                <h3>2012</h3>
+                <p>Milestone or journey story for 2012.</p>
+            </div>
+        </div>
+		
+        <div class="carousel-item">
+            <img src="Office-Lobby.webp" class="d-block w-100 img-fluid" alt="2015 Slide">
+            <div class="carousel-caption">
+                <h3>2015</h3>
+                <p>Milestone or journey story for 2015.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x300.png?text=2018" class="d-block w-100 img-fluid" alt="2018 Slide">
+            <div class="carousel-caption">
+                <h3>2018</h3>
+                <p>Milestone or journey story for 2018.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x300.png?text=2026" class="d-block w-100 img-fluid" alt="2026 Slide">
+            <div class="carousel-caption">
+                <h3>2026</h3>
+                <p>Milestone or journey story for 2026.</p>
+            </div>
+        </div>
+
+    </div>
+
+    
+</div>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+	
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	
+<script>
+    $(document).ready(function() {
+        
+		// Change slide when year point is clicked
+        //$('.year-point').click(function(e) {
+        //    e.preventDefault(); // Prevent default anchor behavior
+        //    var slideIndex = $(this).data('slide-to'); // Get the target slide index
+        //    $('#journeyCarousel').carousel(slideIndex); // Move to the corresponding slide
+        //});
+		
+		// Hover event to change carousel slide based on timeline hover
+        $('.year-point').mouseenter(function() {
+            var slideIndex = $(this).data('slide-to'); // Get the target slide index
+            $('#journeyCarousel').carousel(slideIndex); // Move to the corresponding slide
+
+            // Update active class for the timeline
+            $('.year-point').removeClass('active'); // Clear previous active
+            $(this).addClass('active'); // Add active class to the hovered item
+        });
+		
+		// On carousel slide change, update the active year
+        $('#journeyCarousel').on('slid.bs.carousel', function(event) {
+            var activeIndex = event.to; // Get the index of the active slide
+            // Remove active class from all year points
+            $('.year-point').removeClass('active');
+            // Add active class to the corresponding year point
+            $('.year-point[data-slide-to="' + activeIndex + '"]').addClass('active');
+        });
+
+        // Optional: Enable automatic sliding with a specific interval
+        // $('#journeyCarousel').carousel({
+        //    interval: 0 
+        //});
+    });
+</script>
+
+</body>
+</html>

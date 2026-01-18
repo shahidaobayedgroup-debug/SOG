@@ -1,0 +1,16 @@
+.slider_inner{	
+	
+	z-index: 10;
+    color: rgb(255, 255, 255);
+    width: 354px;
+    height: 620px;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    transform-origin: 50% 50%;
+    opacity: 1;
+    transform: translate(0px, 0px);
+    visibility: visible;
+	margin: 0 auto;
+}

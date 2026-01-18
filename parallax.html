@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css">
+    <style>
+        .parallax {
+            /* Set a fixed background image with a parallax effect */
+            background-image: url('1_lCV5lid-7zfbLBu1cxVg-Q.png'); /* Add your image URL */
+            background-attachment: fixed; /* Ensures the background image is fixed while content scrolls */
+            background-size: cover; /* Adjust the size to cover the entire section */
+            background-position: center; /* Center the background image */
+            height: 100vh; /* Set the height of the section */
+            position: relative; /* Position the section relative to the rest of the page */
+        }
+
+        .parallax-content {
+            position: absolute; /* Position the content absolutely within the section */
+            top: 50%; /* Position the content in the center (vertically) */
+            left: 50%; /* Position the content in the center (horizontally) */
+            transform: translate(-50%, -50%); /* Adjust to ensure content is centered */
+            color: white; /* Ensure text is readable against the background */
+            text-align: center; /* Center text */
+        }
+    </style>
+</head>
+<body>
+    <!-- Some content above -->
+    <div style="height: 800px; background: lightgray;">
+        <h2>Scroll down to see the parallax section</h2>
+        <p>Here's some content to encourage scrolling.</p>
+    </div>
+
+    <!-- Parallax section with a fixed background image -->
+    <div class="parallax">
+        <div class="parallax-content">
+            <h2>Welcome to the Parallax Section</h2>
+            <p>This section has a fixed background image that creates a unique effect as you scroll down.</p>
+        </div>
+    </div>
+
+    <!-- Some content below -->
+    <div style="height: 500px; background: lightgray;">
+        <h2>End of the page</h2>
+        <p>Some more content at the bottom of the page.</p>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

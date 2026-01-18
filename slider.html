@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Example</title>
+    
+	<style>
+	
+	.slider-container {
+		display: flex;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.slider-item {
+	  flex: 33.33%; /* Set flex size for three items in a row */
+	  height: 300px;
+	  background-size: cover;
+	  background-position: center;
+	  color: #fff; /* Set text color to white for better contrast */
+	  text-align: center;
+	  position: relative;
+	  padding: 20px;
+	  transition: background-color 0.5s ease, transform 0.3s ease;
+	}
+	
+	.slider-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0); /* Initial background color */
+            transition: background-color 0.5s ease, transform 0.3s ease;
+        }
+	.slider-item:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+        }
+        .slider-item:hover .overlay {
+            background-color: rgba(0, 119, 193, 0.8);
+            
+        }
+		
+
+.slider-item-content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Ensure content stays above the overlay */
+        }
+
+
+	</style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-item" style="background-image: url('/assets/images/real/ecz1.jpg');">
+			<div class="overlay"></div>
+            <div class="slider-item-content">
+				
+                <h2>MEGHNA</h2>
+                <h3>ECONOMIC ZONE</h3>
+            </div>
+        </div>
+        <div class="slider-item" style="background-image: url('/assets/images/real/ecz2.jpg');">
+			<div class="overlay"></div>
+            <div class="slider-item-content">
+                <h2>MEZ</h2>
+                <h3>COMILLA</h3>
+            </div>
+        </div>
+        <div class="slider-item" style="background-image: url('/assets/images/real/ecz3.jpg');">
+			<div class="overlay"></div>
+            <div class="slider-item-content">
+                <h2>MEGHNA</h2>
+                <h3>INDUSTRIAL ECONOMIC ZONE</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
