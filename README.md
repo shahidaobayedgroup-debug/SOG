@@ -13,7 +13,7 @@ The project follows a standard structure for a static website:
 -   **assets/**: Contains all the static assets for the website.
     -   `assets/brand/`: Logos and brand-related images.
     -   `assets/css/`: CSS files.
-    -   `/assets/images/`: Images used throughout the site, organized by category.
+    -   `./assets/images/`: Images used throughout the site, organized by category.
     -   `assets/js/`: JavaScript files.
 -   **custom-style.css**: Custom stylesheets for the website.
 -   **style.css**: Main stylesheet for the website.

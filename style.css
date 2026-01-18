@@ -359,7 +359,7 @@ body {
 
     
 
-              background-image: url('/assets/images/brand-bg.jpg');
+              background-image: url('./assets/images/brand-bg.jpg');
 
     
 
@@ -1153,7 +1153,7 @@ body {
 
     
 
-            background-image: url('/assets/images/promotion/office.jpg');
+            background-image: url('./assets/images/promotion/office.jpg');
 
     
 
